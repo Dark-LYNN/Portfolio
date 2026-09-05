@@ -1,0 +1,68 @@
+@import "../theme.css";
+
+.hypr-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: rgba(17, 17, 17, 0.96);
+  color: var(--wb-on-background);
+  border: var(--hypr-border-size) solid var(--hypr-inactive-border);
+  border-radius: var(--hypr-rounding);
+  /* NOTE: no overflow:hidden here — it would clip the resize handles that
+     straddle the border. Rounding is applied to titlebar/body instead. */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  font-family: var(--os-font);
+  min-width: 280px;
+  min-height: 180px;
+}
+.hypr-window.focused {
+  border-color: var(--hypr-active-border);
+}
+.hypr-window.fullscreen {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+.hypr-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: #1c1c1c;
+  border-bottom: 1px solid #2a2a2a;
+  border-radius: 5px 5px 0 0;
+  cursor: grab;
+  user-select: none;
+  font-size: 12px;
+}
+.hypr-titlebar:active { cursor: grabbing; }
+.hypr-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; opacity: 0.9; }
+.hypr-controls { display: flex; gap: 6px; }
+.hypr-controls button {
+  background: transparent;
+  border: none;
+  color: var(--wb-primary);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0 4px;
+}
+.hypr-controls button:hover { color: var(--wb-red); }
+.hypr-body { flex: 1; overflow: auto; min-height: 0; border-radius: 0 0 5px 5px; background: inherit; }
+
+/* resize handles: grab zones straddling the border (5px out + 5px in),
+   so the visible border itself is draggable */
+.hypr-resize {
+  position: absolute;
+  z-index: 5;
+  touch-action: none;
+}
+.hypr-resize:hover { background: rgba(193, 193, 255, 0.18); }
+.hypr-window.fullscreen .hypr-resize { display: none; }
+.r-n { top: -5px; left: 12px; right: 12px; height: 10px; cursor: ns-resize; }
+.r-s { bottom: -5px; left: 12px; right: 12px; height: 10px; cursor: ns-resize; }
+.r-e { right: -5px; top: 12px; bottom: 12px; width: 10px; cursor: ew-resize; }
+.r-w { left: -5px; top: 12px; bottom: 12px; width: 10px; cursor: ew-resize; }
+.r-nw { top: -6px; left: -6px; width: 17px; height: 17px; cursor: nwse-resize; }
+.r-se { bottom: -6px; right: -6px; width: 17px; height: 17px; cursor: nwse-resize; }
+.r-ne { top: -6px; right: -6px; width: 17px; height: 17px; cursor: nesw-resize; }
+.r-sw { bottom: -6px; left: -6px; width: 17px; height: 17px; cursor: nesw-resize; }

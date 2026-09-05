@@ -1,0 +1,37 @@
+.wofi-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  z-index: 2000;
+}
+.wofi {
+  width: min(480px, 90vw);
+  background: rgba(17, 17, 17, 0.97);
+  border: 2px solid #c1c1ff;
+  border-radius: 7px;
+  color: #e3e1e9;
+  font-family: "JetBrainsMono Nerd Font", ui-monospace, monospace;
+  overflow: hidden;
+}
+.wofi-title { padding: 10px 14px; font-size: 12px; opacity: 0.6; border-bottom: 1px solid #2a2a2a; }
+.wofi-search {
+  width: 100%; box-sizing: border-box;
+  background: #1c1c1c; border: none; outline: none;
+  color: inherit; font: inherit; font-size: 14px;
+  padding: 12px 14px;
+}
+.wofi-list { display: flex; flex-direction: column; padding: 6px; }
+.wofi-list button {
+  display: flex; gap: 12px; align-items: center;
+  background: transparent; border: none; border-radius: 7px;
+  color: inherit; font: inherit; font-size: 13px;
+  padding: 10px 12px; cursor: pointer; text-align: left;
+}
+.wofi-list button:hover { background: rgba(193,193,255,0.12); }
+.wofi-icon { font-size: 18px; width: 28px; text-align: center; }
+.wofi-exec { margin-left: auto; opacity: 0.45; font-size: 11px; }
+.wofi-hint { padding: 8px 14px; font-size: 11px; opacity: 0.45; border-top: 1px solid #2a2a2a; }

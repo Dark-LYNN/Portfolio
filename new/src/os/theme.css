@@ -1,0 +1,30 @@
+/* Lynnux rice — Madness theme + Hyprland geometry
+   Derived from ~/.config/waybar/styling/themes/Madness.css
+   and ~/.config/hypr/{general,colors}.conf
+*/
+:root {
+  --hypr-active-border: #c1c1ff;
+  --hypr-inactive-border: #454558;
+  --hypr-gaps: 2px;
+  --hypr-rounding: 7px;
+  --hypr-border-size: 2px;
+
+  --wb-primary: #e0e0e0;
+  --wb-primary-container: #242424;
+  --wb-on-primary-container: #dee0ff;
+  --wb-secondary-container: #3d3d3d;
+  --wb-on-secondary-container: #dfe1f9;
+  --wb-background: #111111;
+  --wb-on-background: #e3e1e9;
+  --wb-surface-variant: #ffffff;
+  --wb-green: #a6da95;
+  --wb-red: #ff6961;
+  --wb-pastel-green: #98fb98;
+  --wb-pastel-mint: #98ff98;
+  --wb-pastel-firefox: #ffa07a;
+  --wb-pastel-chrome-blue: #a6c0fe;
+  --wb-pastel-chrome-yellow: #ffec8b;
+  --wb-pastel-telegram: #66a2ff;
+
+  --os-font: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace, monospace;
+}
